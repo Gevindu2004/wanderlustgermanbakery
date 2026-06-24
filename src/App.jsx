@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Menu from './pages/Menu';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
+import Chatbot from './components/Chatbot';
 import './App.css';
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <Chatbot />
     </div>
   );
 }
