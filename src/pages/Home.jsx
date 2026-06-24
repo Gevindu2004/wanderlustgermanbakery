@@ -12,9 +12,9 @@ const Home = () => {
         <img src="/hero2.png" alt="Wanderlust Bakery Interior" className="hero-bg" />
         <motion.div 
           className="container hero-content"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
         >
           <h1>Wanderlust Bakery</h1>
           <p>Taste the Tradition. Feel the Wanderlust.</p>
@@ -44,7 +44,7 @@ const Home = () => {
         className="hours-bar"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ duration: 0.6 }}
       >
         <div className="container hours-bar-container">
@@ -63,46 +63,60 @@ const Home = () => {
         </div>
       </motion.section>
 
-      {/* Featured Section */}
-      <section className="featured section container">
-        <motion.div 
-          className="section-header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2>Our Signatures</h2>
-          <p>Hand-crafted with love, using traditional recipes.</p>
-        </motion.div>
-        
-        <div className="featured-grid">
-          <motion.div 
-            className="featured-card"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <img src="/Salted pretzels.jpg" alt="Authentic Pretzels" />
-            <div className="featured-card-content">
-              <h3>Salted pretzel</h3>
+      {/* Our Signatures (Layered Style) */}
+      <section className="signatures-banner">
+        {/* Item 1 */}
+        <div className="signatures-chalkboard">
+          <div className="signatures-paper">
+            <motion.div 
+              className="signatures-content"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2>Salted Pretzel</h2>
               <p>The original Bavarian soft pretzel with coarse sea salt.</p>
-            </div>
-          </motion.div>
-          <motion.div 
-            className="featured-card"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <img src="/Freshly baked rolls.jpg" alt="Black Forest Cake" />
-            <div className="featured-card-content">
-              <h3>Freshly baked rolls</h3>
-              <p>Soft on the inside, crispy on the outside, just how you love them</p>
-            </div>
-          </motion.div>
+              <Link to="/menu" className="btn-outline-small">Order Now</Link>
+            </motion.div>
+            
+            <motion.img 
+              src="/pretzel.png" 
+              alt="Salted Pretzel" 
+              className="floating-item"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            />
+          </div>
+        </div>
+
+        {/* Item 2 */}
+        <div className="signatures-chalkboard reverse">
+          <div className="signatures-paper">
+            <motion.div 
+              className="signatures-content"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2>Freshly Baked Rolls</h2>
+              <p>Soft on the inside, crispy on the outside, just how you love them.</p>
+              <Link to="/menu" className="btn-outline-small">Order Now</Link>
+            </motion.div>
+            
+            <motion.img 
+              src="/bread.png" 
+              alt="Freshly Baked Rolls" 
+              className="floating-item reverse-img"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            />
+          </div>
         </div>
       </section>
 
@@ -111,10 +125,10 @@ const Home = () => {
         <div className="container why-us-container">
           <motion.div 
             className="why-us-content"
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: false, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h2>Why Choose Wanderlust?</h2>
             <div className="feature-list">
@@ -122,7 +136,7 @@ const Home = () => {
                 className="feature-item"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <Star className="feature-icon" />
@@ -135,7 +149,7 @@ const Home = () => {
                 className="feature-item"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
                 <Star className="feature-icon" />
@@ -148,7 +162,7 @@ const Home = () => {
                 className="feature-item"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: 0.6 }}
               >
                 <Star className="feature-icon" />

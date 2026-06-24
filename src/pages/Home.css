@@ -35,19 +35,25 @@
   text-align: center;
   color: white;
   max-width: 800px;
+  margin-top: -4rem;
 }
 
 .hero-content h1 {
-  font-size: 4.5rem;
+  font-family: var(--font-heading);
+  font-size: 5.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -1px;
   color: white;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
 }
 
 .hero-content p {
-  font-size: 1.5rem;
-  margin-bottom: 2.5rem;
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
   font-weight: 300;
+  letter-spacing: 1px;
 }
 
 .hero-btn {
@@ -82,68 +88,133 @@
   font-weight: 300;
 }
 
-/* Featured Section */
-.section-header {
-  text-align: center;
-  margin-bottom: 4rem;
+/* Signatures Banner (Green Rebel Style) */
+.signatures-banner {
+  width: 100%;
+  background-color: var(--bg-primary);
 }
 
-.section-header h2 {
-  font-size: 2.5rem;
-  color: var(--accent-dark);
-}
-
-.section-header p {
-  color: var(--text-secondary);
-  font-size: 1.1rem;
-}
-
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
-}
-
-.featured-card {
-  background: var(--bg-secondary);
-  border-radius: 16px;
+.signatures-chalkboard {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  background-color: #2a2a2a;
+  background-image: url('https://www.transparenttextures.com/patterns/black-felt.png');
   overflow: hidden;
-  box-shadow: 0 10px 30px var(--shadow-color);
-  transition: var(--transition);
-  cursor: pointer;
-  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: stretch;
 }
 
-.featured-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 40px var(--shadow-hover);
+.signatures-paper {
+  position: relative;
+  width: 75%;
+  background-color: #CBAE88;
+  background-image: url('https://www.transparenttextures.com/patterns/cardboard-flat.png');
+  display: flex;
+  align-items: center;
+  padding-left: 15%;
+  box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+  z-index: 2;
 }
 
-.featured-card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+.signatures-content {
+  max-width: 400px;
 }
 
-.featured-card:hover img {
-  transform: scale(1.08);
-}
-
-.featured-card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
-
-.featured-card-content {
-  padding: 2rem;
-}
-
-.featured-card-content h3 {
-  color: var(--accent-dark);
-  font-size: 1.5rem;
+.signatures-content h2 {
+  font-family: var(--font-body, sans-serif);
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #333;
   margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.signatures-content p {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #444;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+}
+
+.btn-outline-small {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #333;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.btn-outline-small:hover {
+  background-color: #333;
+  color: #CBAE88;
+}
+
+.signatures-chalkboard.reverse {
+  justify-content: flex-end;
+}
+
+.signatures-chalkboard.reverse .signatures-paper {
+  padding-left: 5%;
+  padding-right: 15%;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+}
+
+.signatures-chalkboard.reverse .signatures-content {
+  margin-left: auto;
+  text-align: right;
+}
+
+.floating-item {
+  position: absolute;
+  right: -150px;
+  top: 10%;
+  width: 400px;
+  filter: drop-shadow(15px 20px 20px rgba(0,0,0,0.5));
+  z-index: 3;
+}
+
+.floating-item.reverse-img {
+  right: auto;
+  left: -150px;
+}
+
+@media (max-width: 1024px) {
+  .signatures-paper {
+    width: 85%;
+    padding-left: 10%;
+  }
+  .signatures-chalkboard.reverse .signatures-paper {
+    padding-right: 10%;
+  }
+  .floating-item {
+    width: 300px;
+    right: -100px;
+  }
+  .floating-item.reverse-img {
+    left: -100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .signatures-chalkboard {
+    min-height: 50vh;
+  }
+  .signatures-paper, .signatures-chalkboard.reverse .signatures-paper {
+    width: 100%;
+    padding: 3rem 5%;
+  }
+  .floating-item {
+    display: none;
+  }
 }
 
 /* Why Us Section */
@@ -153,9 +224,12 @@
 }
 
 .why-us-content h2 {
-  font-size: 2.5rem;
+  font-size: 4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -1px;
   color: var(--accent-dark);
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .feature-list {
@@ -223,8 +297,6 @@
   font-weight: 500;
   color: var(--text-secondary);
 }
-
-
 
 @media screen and (max-width: 900px) {
   .hours-bar-container {
