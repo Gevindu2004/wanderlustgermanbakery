@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import './Menu.css';
 
@@ -52,6 +53,13 @@ const itemVariants = {
 };
 
 const Menu = () => {
+  const [activeFilter, setActiveFilter] = useState('All');
+  const categories = ['All', ...menuItems.map(item => item.category)];
+
+  const filteredMenuItems = activeFilter === 'All' 
+    ? menuItems 
+    : menuItems.filter(cat => cat.category === activeFilter);
+
   return (
     <div className="menu-page section">
       <div className="container">
@@ -65,8 +73,25 @@ const Menu = () => {
           <p>Baked fresh every day, following centuries-old traditions.</p>
         </motion.div>
 
+        <motion.div 
+          className="menu-filters"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          {categories.map((cat, index) => (
+            <button 
+              key={index}
+              className={`filter-btn ${activeFilter === cat ? 'active' : ''}`}
+              onClick={() => setActiveFilter(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </motion.div>
+
         <div className="menu-categories">
-          {menuItems.map((cat, index) => (
+          {filteredMenuItems.map((cat, index) => (
             <motion.div 
               key={index} 
               className="menu-category"

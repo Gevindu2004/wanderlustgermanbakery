@@ -17,6 +17,39 @@
   color: var(--text-secondary);
 }
 
+.menu-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.filter-btn:hover {
+  background-color: var(--border-color);
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background-color: var(--accent-gold);
+  color: white;
+  border-color: var(--accent-gold);
+  box-shadow: 0 4px 12px rgba(214, 168, 72, 0.3);
+}
+
 .menu-categories {
   display: flex;
   flex-direction: column;
