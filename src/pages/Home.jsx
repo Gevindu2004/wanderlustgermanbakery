@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight, Star, ArrowDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 import './Home.css';
 
@@ -21,6 +21,21 @@ const Home = () => {
           <Link to="/menu" className="btn btn-primary hero-btn">
             Explore Our Menu <ArrowRight size={20} className="ml-2" />
           </Link>
+        </motion.div>
+
+        <motion.div 
+          className="scroll-indicator"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+        >
+          <span className="scroll-text">Scroll</span>
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          >
+            <ArrowDown size={24} />
+          </motion.div>
         </motion.div>
       </section>
 

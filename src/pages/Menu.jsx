@@ -6,8 +6,8 @@ const menuItems = [
     category: "Fresh Breads",
     items: [
       { name: "Bauernbrot", price: "$6.50", description: "Traditional German Farmer's Bread. Dark, hearty, and sour.", image: "/bread.png" },
-      { name: "Vollkornbrot", price: "$7.00", description: "100% Whole Rye Bread. Dense and nutritious.", image: "/bread.png" },
-      { name: "Brötchen", price: "$1.50", description: "Classic German bread rolls. Crispy outside, fluffy inside.", image: "/bread.png" }
+      { name: "Vollkornbrot", price: "$7.00", description: "100% Whole Rye Bread. Dense and nutritious.", image: "/Vollkornbrot.jpg" },
+      { name: "Brötchen", price: "$1.50", description: "Classic German bread rolls. Crispy outside, fluffy inside.", image: "/Brötchen.jpg" }
     ]
   },
   {
@@ -15,7 +15,7 @@ const menuItems = [
     items: [
       { name: "Salted pretzel", price: "$3.50", description: "The original Bavarian soft pretzel with coarse sea salt.", image: "/Salted pretzels.jpg" },
       { name: "Käsebrezel", price: "$4.50", description: "Soft pretzel baked with a crust of melted Emmental cheese.", image: "/pretzel.png" },
-      { name: "Pretzel Sticks", price: "$3.00", description: "Straight pretzel rolls, perfect for sandwiches.", image: "/pretzel.png" }
+      { name: "Pretzel Sticks", price: "$3.00", description: "Straight pretzel rolls, perfect for sandwiches.", image: "/Pretzel Sticks.jpg" }
     ]
   },
   {
@@ -30,8 +30,8 @@ const menuItems = [
     category: "Beverages",
     items: [
       { name: "Kaffee", price: "$3.50", description: "Classic German filter coffee, rich and aromatic.", image: "/coffee.png" },
-      { name: "Espresso", price: "$2.50", description: "A strong shot of dark roasted espresso.", image: "/coffee.png" },
-      { name: "Heiße Schokolade", price: "$4.00", description: "Warm, creamy hot chocolate topped with whipped cream.", image: "/coffee.png" }
+      { name: "Espresso", price: "$2.50", description: "A strong shot of dark roasted espresso.", image: "/coffee2.jpg" },
+      { name: "Heiße Schokolade", price: "$4.00", description: "Warm, creamy hot chocolate topped with whipped cream.", image: "/Heiße Schokolade.jpg" }
     ]
   }
 ];
