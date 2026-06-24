@@ -75,6 +75,7 @@ const Home = () => {
               viewport={{ once: false }}
               transition={{ duration: 0.8 }}
             >
+              <span className="eyebrow-title">Popular</span>
               <h2>Salted Pretzel</h2>
               <p>The original Bavarian soft pretzel with coarse sea salt.</p>
               <Link to="/menu" className="btn-outline-small">Order Now</Link>
@@ -102,6 +103,7 @@ const Home = () => {
               viewport={{ once: false }}
               transition={{ duration: 0.8 }}
             >
+              <span className="eyebrow-title">Popular</span>
               <h2>Freshly Baked Rolls</h2>
               <p>Soft on the inside, crispy on the outside, just how you love them.</p>
               <Link to="/menu" className="btn-outline-small">Order Now</Link>

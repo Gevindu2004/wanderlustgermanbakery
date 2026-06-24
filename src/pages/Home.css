@@ -122,6 +122,17 @@
   max-width: 400px;
 }
 
+.eyebrow-title {
+  display: block;
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #7a6855;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
 .signatures-content h2 {
   font-family: var(--font-heading, sans-serif);
   font-size: 2.8rem;
