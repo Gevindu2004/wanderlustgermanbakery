@@ -22,7 +22,7 @@ const menuItems = [
     category: "Pastries",
     items: [
       { name: "Freshly baked rolls", price: "$3.00", description: "Soft on the inside, crispy on the outside, just how you love them!", image: "/Freshly baked rolls.jpg" },
-      { name: "Fresh-baked butter crumbles", price: "$5.50", description: "one raspberry bliss and one loaded with apple cinnamon – are straight-up divine.", image: "/Fresh-baked butter crumbles.png" },
+      { name: "Fresh-baked butter crumbles", price: "$5.50", description: "One raspberry bliss and one loaded with apple cinnamon – are straight-up divine.", image: "/Fresh-baked butter crumbles.png" },
        { name: "Cherry Puff ", price: "$3.00", description: " Buttery pastry perfection with that sweet, juicy filling that’s going to hit different.", image: "/Cherry Puff.png" }
     ]
   },
