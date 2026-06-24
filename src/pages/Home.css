@@ -206,14 +206,30 @@
 
 @media (max-width: 768px) {
   .signatures-chalkboard {
-    min-height: 50vh;
+    min-height: auto;
   }
   .signatures-paper, .signatures-chalkboard.reverse .signatures-paper {
     width: 100%;
     padding: 3rem 5%;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: none;
   }
-  .floating-item {
-    display: none;
+  .signatures-chalkboard.reverse .signatures-content {
+    margin-left: 0;
+    text-align: center;
+  }
+  .floating-item, .floating-item.reverse-img {
+    display: block;
+    position: relative;
+    right: auto;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 80%;
+    max-width: 300px;
+    margin-top: 2rem;
+    filter: drop-shadow(5px 10px 10px rgba(0,0,0,0.3));
   }
 }
 
