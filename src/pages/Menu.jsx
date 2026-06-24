@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import './Menu.css';
 
 const menuItems = [
@@ -35,22 +36,55 @@ const menuItems = [
   }
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+};
+
 const Menu = () => {
   return (
-    <div className="menu-page animate-fade-in section">
+    <div className="menu-page section">
       <div className="container">
-        <div className="menu-header">
+        <motion.div 
+          className="menu-header"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <h1>Our Menu</h1>
           <p>Baked fresh every day, following centuries-old traditions.</p>
-        </div>
+        </motion.div>
 
         <div className="menu-categories">
           {menuItems.map((cat, index) => (
-            <div key={index} className="menu-category">
+            <motion.div 
+              key={index} 
+              className="menu-category"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5 }}
+            >
               <h2>{cat.category}</h2>
-              <div className="menu-grid">
+              <motion.div 
+                className="menu-grid"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-50px" }}
+              >
                 {cat.items.map((item, i) => (
-                  <div key={i} className="menu-card">
+                  <motion.div key={i} className="menu-card" variants={itemVariants}>
                     <div className="menu-card-img-container">
                       <img src={item.image} alt={item.name} className="menu-card-img" />
                     </div>
@@ -61,10 +95,10 @@ const Menu = () => {
                       </div>
                       <p className="menu-card-desc">{item.description}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
       </div>

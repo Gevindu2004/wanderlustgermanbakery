@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { motion } from 'framer-motion';
 import logo from '../assets/images.jpg';
 import './Navbar.css';
 
@@ -10,7 +11,12 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="navbar">
+    <motion.nav 
+      className="navbar"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <div className="container nav-container">
         <NavLink to="/" className="nav-logo">
           <img src={logo} alt="Wanderlust Bakery Logo" className="logo-image" />
@@ -44,7 +50,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
