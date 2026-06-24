@@ -108,8 +108,9 @@
 .signatures-paper {
   position: relative;
   width: 75%;
-  background-color: #CBAE88;
-  background-image: url('https://www.transparenttextures.com/patterns/cardboard-flat.png');
+  background-color: #BEA486; /* Richer, darker kraft paper color */
+  background-image: url('https://www.transparenttextures.com/patterns/cardboard.png'), url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  background-blend-mode: multiply;
   display: flex;
   align-items: center;
   padding-left: 15%;
@@ -294,6 +295,13 @@
 @media screen and (max-width: 768px) {
   .hero-content h1 {
     font-size: 3rem;
+  }
+  .section-header h2,
+  .why-us-content h2 {
+    font-size: 2.2rem;
+  }
+  .signatures-content h2 {
+    font-size: 2.2rem;
   }
 }
 
