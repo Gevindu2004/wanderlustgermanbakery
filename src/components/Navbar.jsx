@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Moon, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
 import logo from '../assets/images.jpg';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ isDarkMode, toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -47,6 +47,21 @@ const Navbar = () => {
             <NavLink to="/contact" className="nav-links" onClick={toggleMenu}>
               Contact Us
             </NavLink>
+          </li>
+          <li className="nav-item theme-toggle-item">
+            <div 
+              className={`theme-switch ${isDarkMode ? 'dark' : 'light'}`} 
+              onClick={toggleTheme} 
+              aria-label="Toggle Dark Mode"
+            >
+              <motion.div 
+                className="theme-slider"
+                layout
+                transition={{ type: "spring", stiffness: 700, damping: 30 }}
+              >
+                {isDarkMode ? <Moon size={14} /> : <Sun size={14} />}
+              </motion.div>
+            </div>
           </li>
         </ul>
       </div>

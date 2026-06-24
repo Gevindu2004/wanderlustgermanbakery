@@ -10,13 +10,36 @@
   --accent-dark: #4B311C; /* Dark brown from the logo */
   
   --border-color: #E2D5C8;
+  --bg-tertiary: #f1ebd9;
+  --footer-bg: #4B311C;
   
+  /* Shared values */
+  --shadow-color: rgba(75, 49, 28, 0.1);
+  --shadow-hover: rgba(75, 49, 28, 0.15);
+  --glass-bg: rgba(250, 246, 240, 0.85);
   /* Typography */
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Inter', sans-serif;
   
   /* Transitions */
   --transition: all 0.3s ease;
+}
+
+:root.dark {
+  --bg-primary: #1A120B; 
+  --bg-secondary: #2C1E14; 
+  --text-primary: #FAF6F0; 
+  --text-secondary: #DDC8B4; 
+  --accent-gold: #E6B959; 
+  --accent-dark: #FAF6F0; 
+  
+  --border-color: #3E2B1C;
+  --bg-tertiary: #22160F;
+  --footer-bg: #0D0905;
+  
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --shadow-hover: rgba(0, 0, 0, 0.6);
+  --glass-bg: rgba(44, 30, 20, 0.85);
 }
 
 * {
@@ -31,6 +54,7 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -69,19 +93,23 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.8rem 1.5rem;
-  border-radius: 4px;
-  font-weight: 500;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
   transition: var(--transition);
 }
 
 .btn-primary {
   background-color: var(--accent-gold);
-  color: white;
+  color: #1A120B; /* Always dark text on gold for contrast */
+  box-shadow: 0 4px 15px rgba(214, 168, 72, 0.3);
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-dark);
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(214, 168, 72, 0.5);
 }
 
 .btn-outline {
@@ -91,7 +119,8 @@ button {
 
 .btn-outline:hover {
   background-color: var(--accent-gold);
-  color: white;
+  color: #1A120B;
+  transform: translateY(-2px);
 }
 
 /* Utility layout */
