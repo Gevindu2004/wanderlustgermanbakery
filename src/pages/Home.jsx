@@ -81,7 +81,7 @@ const Home = () => {
             </motion.div>
             
             <motion.img 
-              src="/pretzel.png" 
+              src="/Salted pretzels.jpg" 
               alt="Salted Pretzel" 
               className="floating-item"
               initial={{ opacity: 0, y: -20 }}
@@ -108,7 +108,7 @@ const Home = () => {
             </motion.div>
             
             <motion.img 
-              src="/bread.png" 
+              src="/Freshly baked rolls.jpg" 
               alt="Freshly Baked Rolls" 
               className="floating-item reverse-img"
               initial={{ opacity: 0, y: -20 }}
